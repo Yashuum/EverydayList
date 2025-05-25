@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Everyday List - Yash Project</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-container">
+    <!-- Dark mode toggle -->
+    <button id="darkModeToggle" aria-label="Toggle dark mode" class="dark-mode-toggle">
+      <span class="icon sun">☀️</span>
+      <span class="icon moon">🌙</span>
+    </button>
+
+    <h1>🛍️ Everyday List</h1>
+    <div class="input-section">
+      <input type="text" id="taskInput" placeholder="Add grocery item...">
+      <button id="addBtn">Add</button>
+    </div>
+    <ul id="taskList" class="task-list"></ul>
+
+    <div class="summary">
+      Total Estimated Cost: <span id="totalCost" class="clickable">₹0</span>
+    </div>
+	
+    <button id="priceSetupBtn" class="center-btn">🛠️ Price Book</button>
+  </div>
+
+  <!-- Modal for price setup -->
+  <div id="priceSetupModal" class="modal hidden">
+    <div class="modal-content">
+      <h2>Edit Prices</h2>
+      <div id="priceForm"></div>
+      <button id="closePriceSetup">Close</button>
+    </div>
+  </div>
+
+  <!-- Modal for total breakdown -->
+  <div id="breakdownModal" class="modal hidden">
+    <div class="modal-content">
+      <h2>Price Breakdown</h2>
+      <ul id="breakdownList"></ul>
+      <button id="closeBreakdown">← Back</button>
+    </div>
+  </div>
+
+  <!-- Modal for new item price prompt -->
+  <div id="newItemModal" class="modal hidden">
+    <div class="modal-content">
+      <h3>Add price for <span id="newItemName"></span></h3>
+      <input type="number" id="newItemPrice" placeholder="Enter price...">
+      <div class="modal-actions">
+        <button id="savePrice">Save</button>
+        <button id="skipPrice">Skip</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
